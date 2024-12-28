@@ -1,14 +1,19 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Added for better box model handling */
 }
 
 body {
   display: flex;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
   min-height: 100vh;
   background-color: #f4e4ba;
+  font-family: 'Arial', sans-serif; /* Added a font for better readability */
+}
+h2 {
+  padding-left: 40px;
 }
 
 .container {
@@ -16,8 +21,9 @@ body {
   padding: 2rem;
   border-radius: 1rem;
   min-height: 45vh;
-  max-width: 40vh; 
-  width: 90%; 
+  max-width: 40vh;
+  width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
 }
 
 form {
@@ -31,13 +37,13 @@ input {
   border: none;
   outline: none;
   border-radius: 0.75rem;
+  transition: border-color 0.3s; /* Added transition for smoother focus effect */
 }
 
-p{
-  justify-content: center;
+p {
+  text-align: center; /* Centered text for better alignment */
   font-size: 1.3rem;
-  
-
+  margin-bottom: 1rem; /* Added margin for spacing */
 }
 
 form input {
@@ -47,9 +53,13 @@ form input {
   padding-left: 0.5rem;
 }
 
+form input:focus {
+  border-color: #af4d98; /* Focus effect for input fields */
+}
+
 .dropdown {
   display: flex;
-  flex-direction: column; /* Updated to column for responsiveness */
+  flex-direction: column;
   align-items: center;
   margin-top: 2rem;
 }
@@ -70,15 +80,18 @@ form input {
   width: 6rem;
   border-radius: 0.5rem;
   border: 1px solid lightgray;
+  padding: 0.5rem; /* Added padding for better spacing */
 }
 
 .select-container select {
   font-size: 1rem;
   width: auto;
+  border: none; /* Removed border for a cleaner look */
 }
 
 .msg {
-  margin: 2rem 0 2rem 0;
+  margin: 2rem 0;
+  text-align: center; /* Centered message text */
 }
 
 form button {
@@ -87,11 +100,25 @@ form button {
   color: #fff;
   font-size: 1.15rem;
   cursor: pointer;
+  transition: background-color 0.3s; /* Added transition for button hover effect */
+}
+
+form button:hover {
+  background-color: #933b7d; /* Darker shade on hover */
 }
 
 /* Media Query for smaller screens */
 @media screen and (max-width: 600px) {
   .container {
     max-width: 90%; /* Adjusted max-width for smaller screens */
+  }
+
+  form input,
+  form button {
+    height: 2.5rem; /* Adjusted height for smaller screens */
+  }
+
+  p {
+    font-size: 1.1rem; /* Adjusted font size for smaller screens */
   }
 }
